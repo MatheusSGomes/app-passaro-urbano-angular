@@ -17,4 +17,8 @@ export class HomeComponent implements OnInit {
     this.ofertas = this.ofertasService.getOfertas();
     console.log(this.ofertas);
   }
+
+  public meuLog(valor: any) {
+    console.log(valor);
+  }
 }
