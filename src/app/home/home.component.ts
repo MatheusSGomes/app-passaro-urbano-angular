@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
       .getOfertas2()
       .then((ofertas: Oferta[]) => {
         this.ofertas = ofertas;
+      }, (error: any) => {
+        console.log(error.mensagem_erro);
       });
   }
 }

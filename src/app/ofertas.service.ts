@@ -59,7 +59,13 @@ export class OfertasService {
 
   public getOfertas2(): Promise<Oferta[]> {
     return new Promise((resolve, reject) => {
-      resolve(this.ofertas);
+      const requisicaoBemSucedida = false;
+      
+      if (requisicaoBemSucedida) {
+        resolve(this.ofertas);
+      } else {
+        reject({ codigo_erro: 404, mensagem_erro: 'Recurso não encontrado.' });
+      }
     });
   }
 }
