@@ -16,11 +16,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     // this.ofertas = this.ofertasService.getOfertas();
 
-    this.ofertasService
-      .getOfertas2()
+    this.ofertasService.getOfertas2()
       .then((ofertas: Oferta[]) => {
         this.ofertas = ofertas;
-      }, (error: any) => {
+      })
+      .catch((error: any) => {
         console.log(error.mensagem_erro);
       });
   }
