@@ -1,6 +1,11 @@
+import { Injectable } from '@angular/core';
 import { Oferta } from './shared/oferta.model';
+import { HttpClient } from '@angular/common/http';
 
+@Injectable()
 export class OfertasService {
+
+  constructor(private http: HttpClient) { }
 
   public ofertas: Array<Oferta> = [
     {
@@ -56,16 +61,5 @@ export class OfertasService {
   public getOfertas(): Array<Oferta> {
     return this.ofertas;
   }
-
-  public getOfertas2(): Promise<Oferta[]> {
-    return new Promise((resolve, reject) => {
-      const requisicaoBemSucedida = false;
-      
-      if (requisicaoBemSucedida) {
-        resolve(this.ofertas);
-      } else {
-        reject({ codigo_erro: 404, mensagem_erro: 'Recurso não encontrado.' });
-      }
-    });
-  }
+  
 }
