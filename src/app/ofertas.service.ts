@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Oferta } from './shared/oferta.model';
 import { HttpClient } from '@angular/common/http';
-import { Observable, interval, map, take } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class OfertasService {
