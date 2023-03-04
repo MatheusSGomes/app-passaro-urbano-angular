@@ -10,7 +10,7 @@ export class OfertasService {
   constructor(private http: HttpClient) { }
 
   public getOfertas(): Observable<Object> {
-    const url = 'http://localhost:3000/ofertas';
+    const url = 'http://localhost:3000/ofertas?destaque=true';
     return this.http.get(url);
   }
 }
