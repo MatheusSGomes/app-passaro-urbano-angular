@@ -7,10 +7,15 @@ import { Observable } from 'rxjs';
 export class OfertasService {
 
   public source!: any;
+  private urlApi = 'http://localhost:3000';
+
   constructor(private http: HttpClient) { }
 
   public getOfertas(): Observable<Object> {
-    const url = 'http://localhost:3000/ofertas?destaque=true';
-    return this.http.get(url);
+    return this.http.get(this.urlApi + '/ofertas?destaque=true');
+  }
+
+  public getOfertasPorCategoria(categoria: string): Observable<Object> {
+    return this.http.get(this.urlApi + `/ofertas?categoria=${categoria}`);
   }
 }
