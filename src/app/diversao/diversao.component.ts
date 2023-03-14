@@ -16,7 +16,7 @@ export class DiversaoComponent implements OnInit {
   ngOnInit() {
     this.carregaOfertasPorCategoria();
   }
-
+  
   public async carregaOfertasPorCategoria() {
     const ofertasCategoria = this.ofertasService.getOfertasPorCategoria('diversao');
     this.ofertas = await lastValueFrom(ofertasCategoria);
