@@ -18,4 +18,8 @@ export class OfertasService {
   public getOfertasPorCategoria(categoria: string): Observable<Object> {
     return this.http.get(this.urlApi + `/ofertas?categoria=${categoria}`);
   }
+
+  public getOfertaPorId(id: number): Observable<object> {
+    return this.http.get(this.urlApi + `/ofertas?id=${id}`);
+  }
 }
