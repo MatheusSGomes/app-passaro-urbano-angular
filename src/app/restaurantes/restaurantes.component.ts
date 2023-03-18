@@ -22,6 +22,5 @@ export class RestaurantesComponent {
   public async carregaOfertasPorCategoria() {
     const ofertasCategoria = this.ofertasService.getOfertasPorCategoria('restaurante');
     this.ofertas = await lastValueFrom(ofertasCategoria);
-    console.log(this.ofertas);
   }
 }
