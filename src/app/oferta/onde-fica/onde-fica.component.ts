@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-onde-fica',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./onde-fica.component.css']
 })
 export class OndeFicaComponent {
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    console.log(this.route.parent?.snapshot.params);
+  }
 
 }

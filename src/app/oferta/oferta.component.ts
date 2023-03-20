@@ -22,6 +22,5 @@ export class OfertaComponent implements OnInit {
     const ofertaPorId = this.ofertasService.getOfertaPorId(this.route.snapshot.params['id']);
     this.oferta = await lastValueFrom(ofertaPorId);
     this.oferta = this.oferta[0];
-    console.log(this.oferta);
   }
 }
