@@ -19,8 +19,14 @@ export class OfertasService {
     return this.http.get(`${URL_API}/ofertas?categoria=${categoria}`);
   }
 
-  public getOfertaPorId(id: number): Observable<object> {
-    return this.http.get(`${URL_API}/ofertas?id=${id}`);
+  // public getOfertaPorId(id: number): Observable<object> {
+  //   return this.http.get(`${URL_API}/ofertas?id=${id}`);
+  // }
+
+  public getOfertaPorId(id: number) {
+    return this.http.get(`${URL_API}/ofertas?id=${id}`)
+    .toPromise()
+    .then(response => response);
   }
 
   public getComoUsarOfertaPorId(id: number) {
