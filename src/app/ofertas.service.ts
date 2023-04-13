@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Oferta } from './shared/oferta.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from "rxjs/operators"; 
 import { URL_API } from './app.api';
 
 @Injectable()
@@ -18,10 +19,6 @@ export class OfertasService {
   public getOfertasPorCategoria(categoria: string): Observable<Object> {
     return this.http.get(`${URL_API}/ofertas?categoria=${categoria}`);
   }
-
-  // public getOfertaPorId(id: number): Observable<object> {
-  //   return this.http.get(`${URL_API}/ofertas?id=${id}`);
-  // }
 
   public getOfertaPorId(id: number) {
     return this.http.get(`${URL_API}/ofertas?id=${id}`)
@@ -45,4 +42,8 @@ export class OfertasService {
       });
   }
 
+  public pesquisaOfertas(termo: string): Observable<any> {
+    return this.http.get(`${URL_API}/ofertas?descricao_oferta=${termo}`)
+    .pipe(map((response: any) => response.json()));
+  }
 }
