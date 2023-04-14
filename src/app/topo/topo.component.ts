@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { OfertasService } from '../ofertas.service';
+import { Observable } from 'rxjs';
+import { Oferta } from '../shared/oferta.model';
 
 @Component({
   selector: 'app-topo',
@@ -9,11 +11,17 @@ import { OfertasService } from '../ofertas.service';
 })
 export class TopoComponent {
 
+  public ofertas!: Observable<Oferta[]>;
+
   constructor(
     private ofertasService: OfertasService
   ) {}
 
-  public pesquisa(termoDaBusca: String): void {
-    console.log(termoDaBusca);
+  public pesquisa(termoDaBusca: string): void {
+    this.ofertas = this.ofertasService.pesquisaOfertas(termoDaBusca);
+    this.ofertas.subscribe(
+      (ofertas: Oferta[]) => console.log(ofertas)
+    );
+
   }
 }

@@ -42,8 +42,8 @@ export class OfertasService {
       });
   }
 
-  public pesquisaOfertas(termo: string): Observable<any> {
-    return this.http.get(`${URL_API}/ofertas?descricao_oferta=${termo}`)
-    .pipe(map((response: any) => response.json()));
+  public pesquisaOfertas(termo: string): Observable<Oferta[]> {
+    return this.http.get(`${URL_API}/ofertas?descricao_oferta_like=${termo}`)
+    .pipe(map((response: any) => response));
   }
 }
