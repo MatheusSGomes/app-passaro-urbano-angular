@@ -20,7 +20,9 @@ export class TopoComponent {
   public pesquisa(termoDaBusca: string): void {
     this.ofertas = this.ofertasService.pesquisaOfertas(termoDaBusca);
     this.ofertas.subscribe(
-      (ofertas: Oferta[]) => console.log(ofertas)
+      (ofertas: Oferta[]) => console.log(ofertas),
+      (error: any) => console.log(error),
+      () => console.log('Fluxo de eventos completo')
     );
 
   }

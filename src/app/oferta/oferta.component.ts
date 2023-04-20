@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OfertasService } from '../ofertas.service';
-import { lastValueFrom, } from 'rxjs';
 
 @Component({
   selector: 'app-oferta',
@@ -21,7 +20,8 @@ export class OfertaComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.ofertasService.getOfertaPorId(this.route.snapshot.params['id'])
     .then(oferta => {
-      this.oferta = oferta
+      this.oferta = oferta;
+      this.oferta = this.oferta[0];
     })
   }
 
