@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OfertasService } from '../ofertas.service';
 import { Observable, Subject, of } from 'rxjs';
 import { Oferta } from '../shared/oferta.model';
-import { retry, switchMap, debounceTime } from "rxjs/operators"; 
+import { retry, switchMap, debounceTime, distinctUntilChanged } from "rxjs/operators"; 
 
 @Component({
   selector: 'app-topo',
@@ -22,7 +22,8 @@ export class TopoComponent implements OnInit {
   ngOnInit(): void {
     this.ofertas = this.subjectPesquisa // retorno ao término de Oferta[]
     .pipe(
-      debounceTime(1000), 
+      debounceTime(1000),
+      distinctUntilChanged(),
       switchMap((termo: string) => {
         console.log('requisição http para api', termo);
 
