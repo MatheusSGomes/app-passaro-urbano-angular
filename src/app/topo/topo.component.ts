@@ -13,6 +13,7 @@ import { retry, switchMap, debounceTime, distinctUntilChanged, catchError } from
 export class TopoComponent implements OnInit {
 
   public ofertas!: Observable<Oferta[]>;
+  public ofertas2!: Oferta[];
   private subjectPesquisa: Subject<string> = new Subject<string>();
 
   constructor(
@@ -23,8 +24,8 @@ export class TopoComponent implements OnInit {
     this.ofertas = this.subjectPesquisa // retorno ao término de Oferta[]
     .pipe(
       retry({count: 5, delay: 1000}),
-      debounceTime(1000),
-      distinctUntilChanged(),
+      debounceTime(1000), // executa a ação do switchMap após 1 segundo
+      distinctUntilChanged(), // para fazer pesquisas distintas
       switchMap((termo: string) => {
         console.log('requisição http para api', termo);
 
@@ -42,6 +43,7 @@ export class TopoComponent implements OnInit {
 
     this.ofertas.subscribe((ofertas: Oferta[]) => {
       console.log(ofertas);
+      this.ofertas2 = ofertas;
     });
   }
 
