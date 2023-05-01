@@ -12,6 +12,7 @@ import { lastValueFrom } from 'rxjs';
 export class RestaurantesComponent {
 
   public ofertas!: any;
+  public dataTeste: Date = new Date(2023, 4, 30);
 
   constructor(private ofertasService: OfertasService) {}
 
