@@ -17,7 +17,9 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "intl",
+              "intl/locale-data/jsonp/pt-BR"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
