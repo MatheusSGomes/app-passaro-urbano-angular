@@ -24,6 +24,5 @@ export class ComoUsarComponent {
         this.comoUsar = descricao;
       });
     });
-
   }
 }
