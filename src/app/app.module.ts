@@ -22,7 +22,8 @@ import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt);
 
 // pipe
-import { DescricaoReduzida } from './util/descricao-reduzida'; 
+import { DescricaoReduzida } from './util/descricao-reduzida';
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component'; 
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DescricaoReduzida } from './util/descricao-reduzida';
     OfertaComponent,
     ComoUsarComponent,
     OndeFicaComponent,
-    DescricaoReduzida
+    DescricaoReduzida,
+    OrdemCompraComponent
   ],
   imports: [
     BrowserModule,
