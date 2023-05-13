@@ -17,6 +17,6 @@ export class OrdemCompraService {
       `${URL_API}/pedidos`,
       pedido,
       { headers }
-    ).pipe(map((response: any) => console.log(response)))
+    ).pipe(map((response: any) => response));
   }
 }
