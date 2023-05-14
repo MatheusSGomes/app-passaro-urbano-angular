@@ -18,6 +18,6 @@ export class OrdemCompraComponent implements OnInit {
   ngOnInit() {}
 
   public confirmarCompra() {
-    console.log(this.form)
+    console.log(this.form.form)
   }
 }
