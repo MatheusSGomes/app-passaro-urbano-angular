@@ -24,7 +24,7 @@ registerLocaleData(localePt);
 // pipe
 import { DescricaoReduzida } from './util/descricao-reduzida';
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
-import { OrdeCompraSucessoComponent } from './orde-compra-sucesso/orde-compra-sucesso.component'; 
+import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component'; 
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { OrdeCompraSucessoComponent } from './orde-compra-sucesso/orde-compra-su
     OndeFicaComponent,
     DescricaoReduzida,
     OrdemCompraComponent,
-    OrdeCompraSucessoComponent
+    OrdemCompraSucessoComponent
   ],
   imports: [
     BrowserModule,

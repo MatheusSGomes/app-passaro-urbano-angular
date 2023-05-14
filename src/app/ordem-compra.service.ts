@@ -9,7 +9,7 @@ import { URL_API } from "./app.api";
 export class OrdemCompraService {
   constructor (private http: HttpClient) {}
 
-  public efetivarCompra (pedido: Pedido): Observable<any> {
+  public efetivarCompra (pedido: Pedido): Observable<number> {
     const headers: HttpHeaders = new HttpHeaders();
     headers.append('Content-type', 'application/json');
 
@@ -17,6 +17,6 @@ export class OrdemCompraService {
       `${URL_API}/pedidos`,
       pedido,
       { headers }
-    ).pipe(map((response: any) => response));
+    ).pipe(map((response: any) => response.id));
   }
 }
