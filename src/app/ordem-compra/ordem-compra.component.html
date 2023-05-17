@@ -62,10 +62,6 @@
       </div>
       <br />
 
-      <pre>Válido: {{ formulario.valid | json }}</pre>
-      <pre>Inválido {{ formulario.invalid | json }}</pre>
-      <pre>{{ formulario.value | json }}</pre>
-
       <h5>Dados de entrega</h5>
       <hr />
 
@@ -130,14 +126,14 @@
             name="formaPagamento"
             ngModel
             required
-            #inputFormaPagamento="ngModel"
+            #selectFormaPagamento="ngModel"
           >
             <option value="">Selecione uma opção</option>
             <option value="dinheiro">Dinheiro</option>
             <option value="debito">Débito</option>
           </select>
-          <small *ngIf="inputFormaPagamento.valid && inputFormaPagamento.touched" class="form-text text-success">Ok</small>
-          <small *ngIf="inputFormaPagamento.invalid && inputFormaPagamento.touched" class="form-text text-danger">Forma de pagamento inválida</small>
+          <small *ngIf="selectFormaPagamento.valid && selectFormaPagamento.touched" class="form-text text-success">Ok</small>
+          <small *ngIf="selectFormaPagamento.invalid && selectFormaPagamento.touched" class="form-text text-danger">Forma de pagamento inválida</small>
         </div>
       </div>
 
