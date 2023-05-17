@@ -12,7 +12,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class OrdemCompraComponent implements OnInit {
 
   public formulario: FormGroup = new FormGroup({
-    'endereço': new FormControl(null),
+    'endereco': new FormControl(null),
     'numero': new FormControl(null),
     'complemento': new FormControl(null),
     'formaPagamento': new FormControl(null)
