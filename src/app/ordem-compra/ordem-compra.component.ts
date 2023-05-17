@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdemCompraService } from '../ordem-compra.service'
 import { Pedido } from '../shared/pedido.model'
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ordem-compra',
@@ -9,6 +10,13 @@ import { Pedido } from '../shared/pedido.model'
   providers: [ OrdemCompraService ]
 })
 export class OrdemCompraComponent implements OnInit {
+
+  public formulario: FormGroup = new FormGroup({
+    'endereço': new FormControl(null),
+    'numero': new FormControl(null),
+    'complemento': new FormControl(null),
+    'formaPagamento': new FormControl(null)
+  });
 
   constructor(private ordemCompraService: OrdemCompraService) { }
 
