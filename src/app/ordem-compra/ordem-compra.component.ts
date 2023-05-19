@@ -33,6 +33,6 @@ export class OrdemCompraComponent implements OnInit {
   ngOnInit() {}
 
   public confirmarCompra(): void {
-    console.log(this.formulario);
+    console.log(this.formulario.get('endereco')?.valid);
   }
 }
