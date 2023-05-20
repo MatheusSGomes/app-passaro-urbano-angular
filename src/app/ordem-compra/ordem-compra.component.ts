@@ -38,7 +38,19 @@ export class OrdemCompraComponent implements OnInit {
     if (this.formulario.status === "INVALID") {
       this.marcaCamposTouched();
     } else {
-      
+      let pedido: Pedido = new Pedido(
+        this.formulario.value.endereco,
+        this.formulario.value.numero,
+        this.formulario.value.complemento,
+        this.formulario.value.formaPagamento
+      );
+
+      this.ordemCompraService
+        .efetivarCompra(pedido)
+        .subscribe((idPedido: number) => {
+          this.idPedidoCompra = idPedido;
+          console.log(this.idPedidoCompra);
+        });
     }
   }
 
