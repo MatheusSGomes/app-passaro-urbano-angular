@@ -11,6 +11,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class OrdemCompraComponent implements OnInit {
 
+  public idPedidoCompra!: number; 
+
   public formulario: FormGroup = new FormGroup({
     'endereco': new FormControl(null, [ 
       Validators.required,
@@ -33,6 +35,18 @@ export class OrdemCompraComponent implements OnInit {
   ngOnInit() {}
 
   public confirmarCompra(): void {
-    console.log(this.formulario.get('endereco')?.valid);
+    if (this.formulario.status === "INVALID") {
+      this.marcaCamposTouched();
+    } else {
+      
+    }
+  }
+
+  public marcaCamposTouched() {
+    Object
+      .keys(this.formulario.controls)
+      .forEach((formulario) => {
+        this.formulario.get(formulario)?.markAsTouched();
+      });
   }
 }
